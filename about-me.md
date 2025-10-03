@@ -1,7 +1,7 @@
 # Skills & Expertise
 
 - **React.js (Functional Components & Hooks):** Building dynamic, responsive user interfaces with modern React best practices.  
-- **JavaScript (ES6+ & Asynchronous Programming):** Strong command of core JavaScript concepts, including async/await, promises, and event-driven programming.  
+- **JavaScript (ES6+ & Asynchronous Programming):** Strong command of core JavaScript concepts, including async/await, promises, and event-driven programming.
 - **Django & Django REST Framework:** Developing secure, scalable backend APIs with JWT-based authentication and efficient data handling.  
 - **Backend Development Fundamentals:** Solid understanding of RESTful principles, API design, and server-side logic implementation.  
 - **PostgreSQL & SQL:** Writing efficient queries, managing relational data, and basic database schema design.  
