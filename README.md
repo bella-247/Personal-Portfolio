@@ -1,37 +1,65 @@
-# On Development
+# Abel Mekonen — Personal Portfolio
 
+Hi — I'm Abel Mekonen, a multidisciplinary developer building web and AI-driven products with a focus on clean code, practical solutions, and continuous learning.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This repository is my personal portfolio website built with Next.js, Tailwind CSS and a small collection of components and utilities to showcase projects, skills, and contact information.
 
-## Getting Started
+## About Me
 
-First, run the development server:
+-   Name: Abel Mekonen
+-   Role: Multi Disciplinary Enthusiast / Fullstack Developer
+-   Education: BSc. Software Engineering, Addis Ababa Science and Technology University (AASTU)
+-   Experience: 2022 — present (experience shown dynamically on the site)
 
-```bash
+Short bio: Enthusiastic Fullstack Developer, building impactful solutions through Web, AI, and beyond. I enjoy solving problems, learning new technologies, and shipping polished user experiences.
+
+## Skills & Interests
+
+-   React, Next.js, TypeScript, JavaScript (ES6+)
+-   Python, Django, Django REST Framework
+-   API design, PostgreSQL, database management
+-   Tailwind CSS, HTML5, CSS3, UI/UX design
+-   AI & Machine Learning fundamentals
+-   Problem solving (algorithms & data structures)
+-   Other: Git/GitHub
+
+## Highlights
+
+-   Built multiple fullstack projects (see `/projects` route)
+-   Solved 200+ problems on LeetCode to sharpen algorithmic skills
+-   Active interest in combining AI with web applications
+
+## What you'll find in this repo
+
+-   `app/` — Next.js App Router pages (About, Projects, Skills, Work, Contact, etc.)
+-   `components/` and `app/*/components` — Reusable UI components and sections
+-   `data/` — Project, skill, and achievement metadata used by the site
+-   `public/` — Static assets (profile photo and other images)
+-   `lib/` — Utilities and API helpers (including GitHub API helpers)
+
+## Run locally
+
+Make sure Node.js (v16+ recommended) is installed. From the project root:
+
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser. The `app/` directory contains the pages; `app/me/page.tsx` shows the About page content.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit your content
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Personal details are centralized in `app/me/constants/myInfo.ts`. Skills and longer descriptions are also available in `about-me.md` and the About page at `app/me/page.tsx`.
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
+Visit the Contact page (`/contact`) to see contact channels. The site uses `app/contact/constants/contactInfos.ts` to store contact info.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This portfolio is published under the project license (see `LICENSE`).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you'd like, I can further polish this README (add badges, screenshots, deployment instructions, or CI configuration). Let me know what you'd like to include.
