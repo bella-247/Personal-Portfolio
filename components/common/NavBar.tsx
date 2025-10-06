@@ -99,6 +99,8 @@ export default function Navbar() {
                         <ThemeToggle />
                     </div>
 
+
+
                     {/* Mobile menu button */}
                     <div className="flex items-center space-x-2 md:hidden">
                         <ThemeToggle />
@@ -129,7 +131,7 @@ export default function Navbar() {
                             </div>
 
                             {showcaseLinks.map((item) => (
-                                <NavItem key={item.name} href={item.href} name={item.name} pathname={pathname} onClick={() => setIsOpen(false)} />
+                                <NavItem key={item.name} href={item.href} mobile={true} name={item.name} pathname={pathname} onClick={() => setIsOpen(false)} />
                             ))}
 
                             <NavItem href="/contact" name="Contact" pathname={pathname} onClick={() => setIsOpen(false)} />
@@ -142,7 +144,7 @@ export default function Navbar() {
 }
 
 
-function NavItem({ href, name, pathname, onClick }: any) {
+function NavItem({ href, name, pathname, onClick, mobile = false }: any) {
     return (
         <Link
             href={href}
@@ -150,6 +152,7 @@ function NavItem({ href, name, pathname, onClick }: any) {
             className={cn(
                 "block px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
                 pathname === href ? "text-foreground" : "text-muted-foreground",
+                mobile && "pl-8 pr-6"
             )}
             aria-current={pathname === href ? "page" : undefined}
         >

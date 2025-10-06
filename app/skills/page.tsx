@@ -85,7 +85,7 @@ export default function SkillsPage() {
         </div>
 
         {/* Skills Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-lg">Total Skills</CardTitle>
