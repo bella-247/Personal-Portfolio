@@ -35,3 +35,5 @@ export const myInfo = {
     photo : "/me.jpg",
     fullPhotoPath : imageUrl
 };
+
+export type MyInfo = typeof myInfo;

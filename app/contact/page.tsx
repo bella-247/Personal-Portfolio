@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -6,6 +7,13 @@ import { Textarea } from "@/components/ui/textarea"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Mail, Github, Linkedin, Code, MapPin, Phone, Send } from "lucide-react"
 import { contactInfos } from "./constants/contactInfos"
+
+
+export const metadata: Metadata = {
+    title: "Contact",
+    description:
+        "Get in touch with Abel Mekonen for collaborations, freelance projects, or full-time opportunities. Connect via email, LinkedIn, or GitHub.",
+}
 
 export default function ContactPage() {
     const contactInfo = [

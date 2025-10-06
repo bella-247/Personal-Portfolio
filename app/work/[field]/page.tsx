@@ -63,8 +63,6 @@ function GitHubStatsLoading() {
   )
 }
 
-
-
 async function GitHubStatsSection() {
   const stats = await fetchGitHubStats()
 
@@ -152,9 +150,12 @@ export default function FieldPage({ params }: { params: { field: string } }) {
           </div>
         </div>
 
-        <Suspense fallback={<GitHubStatsLoading />}>
-          <GitHubStatsSection />
-        </Suspense>
+        {/* GitHub Stats Section (only for GitHub field) */}
+        {field.id === "github" && (
+          <Suspense fallback={<GitHubStatsLoading />}>
+            <GitHubStatsSection />
+          </Suspense>
+        )}
 
         {/* Projects Section */}
         <div className="mb-12">

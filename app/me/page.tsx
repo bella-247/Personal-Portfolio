@@ -164,17 +164,6 @@ export default function AboutPage() {
           </CardContent>
         </Card>
 
-        <Card className="mb-16">
-          <CardContent className="p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">My Learning Philosophy</h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-pretty">
-              I believe in continuous learning and staying updated with the latest technologies. Each skill represents
-              hours of practice, real-world application, and ongoing refinement. I'm always eager to learn new
-              technologies and deepen my understanding of existing ones.
-            </p>
-          </CardContent>
-        </Card>
-
         {/* CTA Section */}
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Let's Work Together</h2>

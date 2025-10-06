@@ -80,7 +80,7 @@ export const gallery = [
         id: 1,
         title: "Tech Conference 2024",
         description: "Speaking at a major tech conference",
-        image: "/tech-conference-speaker-on-stage.jpg",
+        image: "/placeholder.png",
     },
     {
         id: 2,

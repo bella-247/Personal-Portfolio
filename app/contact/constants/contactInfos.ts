@@ -24,3 +24,5 @@ export const contactInfos : Record<string, any> = {
         username : "boosted_bella2247",
     },
 }
+
+export type ContactInfos = typeof contactInfos;
