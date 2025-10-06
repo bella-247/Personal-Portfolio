@@ -29,7 +29,7 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
             `${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
             {
                 headers,
-                next: { revalidate: 3600 }, // Cache for 1 hour
+                next: { revalidate: 7200 }, // Cache for 2 hours
             }
         );
 
@@ -53,7 +53,7 @@ export async function fetchGitHubUser(): Promise<GitHubUser | null> {
             `${GITHUB_API_BASE}/users/${GITHUB_USERNAME}`,
             {
                 headers,
-                next: { revalidate: 3600 }, // Cache for 1 hour
+                next: { revalidate: 7200 }, // Cache for 2 hours
             }
         );
 
@@ -79,7 +79,7 @@ export async function fetchRepoLanguages(
             `${GITHUB_API_BASE}/repos/${GITHUB_USERNAME}/${repoName}/languages`,
             {
                 headers,
-                next: { revalidate: 3600 },
+                next: { revalidate: 7200 },
             }
         );
 
@@ -171,8 +171,8 @@ export async function fetchGitHubStats(): Promise<GitHubStats | null> {
             0
         );
 
-        // Fetch languages for all repos
-        const languagePromises = repos.map((repo) =>
+        const topRepos = repos.slice(0, 20);
+        const languagePromises = topRepos.map((repo) =>
             fetchRepoLanguages(repo.name)
         );
         const repoLanguages = await Promise.all(languagePromises);
@@ -229,13 +229,13 @@ export function separateRepos(repos: GitHubRepo[]): {
 /**
  * Fetch pinned repositories using GitHub GraphQL API
  * Note: GitHub REST API does not provide pinned repos, so we use GraphQL
- * 
+ *
  */
 
 export async function fetchGitHubPinnedRepos(): Promise<GitHubRepo[]> {
     const query = `
     {
-      user(login: ${GITHUB_USERNAME}) {
+      user(login: "${GITHUB_USERNAME}") {
         pinnedItems(first: 6, types: REPOSITORY) {
           nodes {
             ... on Repository {
@@ -284,7 +284,7 @@ export async function fetchGitHubPinnedRepos(): Promise<GitHubRepo[]> {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ query }),
-        next: { revalidate: 3600 }, // cache for 1h
+        next: { revalidate: 7200 }, // cache for 2h
     });
 
     if (!response.ok) {
@@ -294,8 +294,7 @@ export async function fetchGitHubPinnedRepos(): Promise<GitHubRepo[]> {
     const { data } = await response.json();
 
     return data.user.pinnedItems.nodes.map((repo: any) => ({
-        // id: Number(repo.id.replace(/\D/g, "")) || Date.now(), // GraphQL IDs are strings → convert
-        id: repo.id || Date.now(), // GraphQL IDs are strings → convert
+        id: repo.id || Date.now(),
         name: repo.name,
         full_name: repo.fullName,
         description: repo.description,

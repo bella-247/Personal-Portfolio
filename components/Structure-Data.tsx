@@ -9,7 +9,7 @@ export function StructuredData() {
         jobTitle: "Fullstack Developer and Multi Disciplinary Enthusiast",
         description: myInfo.bio,
         url: contactInfos.website,
-        image: `${contactInfos.website}/me.jpg`,
+        image: `${contactInfos.website}/${myInfo.photo}`,
         sameAs: [contactInfos.github.url, contactInfos.linkedin.url, contactInfos.leetcode.url],
         knowsAbout: myInfo.knowledge,
         alumniOf: {

@@ -7,7 +7,8 @@ import { ThemeProvider } from "next-themes"
 import Navbar from "@/components/common/NavBar"
 import Footer from "@/components/common/Footer";
 import { Suspense } from "react"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { myInfo } from "./me/constants/myInfo"
+
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
         siteName: "Abel Mekonen Portfolio",
         images: [
             {
-                url: "/me.jpg",
+                url: myInfo.photo,
                 width: 1200,
                 height: 630,
                 alt: "Abel Mekonen - Fullstack Developer",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Abel Mekonen - Fullstack Developer",
         description: "Enthusiastic Fullstack Developer building impactful solutions through Web, AI, and beyond.",
-        images: ["/me.jpg"],
+        images: [myInfo.photo],
     },
     robots: {
         index: true,

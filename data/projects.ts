@@ -199,3 +199,11 @@ export function getProjectsByTags(tags: string[]): Project[] {
         project.tags.some((tag) => tags.includes(tag))
     );
 }
+
+export function getAllProjectTags(): string[] {
+    const tagSet = new Set<string>();
+    projects.forEach((project) => {
+        project.tags.forEach((tag) => tagSet.add(tag));
+    });
+    return Array.from(tagSet);
+}

@@ -6,6 +6,7 @@ import Link from "next/link"
 import { ArrowRight, MapPin, GraduationCap, Code, Heart } from "lucide-react"
 import { contactInfos } from "../contact/constants/contactInfos"
 import { myInfo } from "./constants/myInfo"
+import { DownloadCVButton } from "./components/download-cv-button"
 
 export default function AboutPage() {
   const timeline = [
@@ -55,7 +56,7 @@ export default function AboutPage() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="relative w-48 h-48 mx-auto mb-8">
-            <Image src="/me.jpg" alt="Abel Mekonen" fill className="object-cover rounded-full shadow-xl" />
+            <Image src={myInfo.photo} alt="Abel Mekonen" fill className="object-cover rounded-full shadow-xl" />
           </div>
           <h1 className="text-4xl font-bold mb-4">About Abel Mekonen</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
@@ -191,6 +192,9 @@ export default function AboutPage() {
             <Button asChild variant="outline" size="lg">
               <Link href="/projects">View My Projects</Link>
             </Button>
+            <div className="flex items-center">
+              <DownloadCVButton />
+            </div>
           </div>
         </div>
       </div>

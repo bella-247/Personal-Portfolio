@@ -1,9 +1,9 @@
 // GitHub API Response Types
 export interface GitHubOrg {
-    login: string
-    description: string
-    url: string
-    avatar_url: string
+    login: string;
+    description: string;
+    url: string;
+    avatar_url: string;
 }
 
 export interface GitHubRepo {

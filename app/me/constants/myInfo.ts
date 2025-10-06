@@ -1,4 +1,8 @@
+import path from "path";
 const experience = new Date().getFullYear() - 2022;
+const imagePath = path.resolve(__dirname, "../public/me.jpg");
+const imageUrl = `file://${imagePath}`;
+
 
 export const myInfo = {
     name: "Abel Mekonen",
@@ -28,4 +32,6 @@ export const myInfo = {
         "3D Modeling",
         "Video Editing",
     ],
+    photo : "/me.jpg",
+    fullPhotoPath : imageUrl
 };

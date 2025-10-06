@@ -10,6 +10,7 @@ import { FieldCard } from "@/app/work/[field]/components/field-card"
 import { StructuredData } from "@/components/Structure-Data"
 import { myInfo } from "./me/constants/myInfo"
 import { contactInfos } from "./contact/constants/contactInfos"
+import { DownloadCVButton } from "./me/components/download-cv-button"
 
 export default function HomePage() {
   const featuredProjects = getFeaturedProjects()
@@ -27,7 +28,7 @@ export default function HomePage() {
               <div className="relative">
                 <div className="w-80 h-80 lg:w-96 lg:h-96 relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/me.jpg"
+                    src={myInfo.photo}
                     alt={myInfo.role}
                     fill
                     className="object-cover"
@@ -67,6 +68,9 @@ export default function HomePage() {
                       <Mail className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
+                  <div className="flex items-center">
+                    <DownloadCVButton />
+                  </div>
                 </div>
 
                 {/* Social Links */}
