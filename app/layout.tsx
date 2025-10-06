@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
@@ -94,6 +95,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+                <SpeedInsights />
                 <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
                     <Suspense fallback={null}>
                         {/* <QueryClientProvider client={queryClient}> */}
